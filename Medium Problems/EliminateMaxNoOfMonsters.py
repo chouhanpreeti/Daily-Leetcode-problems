@@ -12,15 +12,17 @@ def eliminateMaximum(dist,speed):
     time = []
     
     for i in range(0, len(speed)):
-        time.append(dist[i]/speed[i])
+        time.append(float(dist[i])/float(speed[i]))
+
 
     sort_time = sorted(time)
+    print(sort_time)
 
     clock=0
     number_monster_killed = 0
 
     for time_monster_reach in sort_time:
-        if time_monster_reach<clock:
+        if time_monster_reach<=clock:
             break
         else:
             clock+=1
@@ -28,7 +30,7 @@ def eliminateMaximum(dist,speed):
     return number_monster_killed
 
 
-print(eliminateMaximum([ 10, 5 , 7], [2 , 2 , 3]))
+print(eliminateMaximum([1,1,2,3], [1 , 1 , 1, 1]))
             
         
         
